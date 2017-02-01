@@ -10,13 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/juaoregon/Grunt.git"
   },
-  "author": "",
+  "author": "Juan Orero <juaoregon@gmail.comm> (juaoregon.github.io)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/juaoregon/Grunt/issues"
   },
   "homepage": "https://github.com/juaoregon/Grunt#readme",
   "devDependencies": {
-    "grunt": "^1.0.1"
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0"
   }
 }

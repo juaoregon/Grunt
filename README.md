@@ -3,7 +3,8 @@
 
 ##Installation
 - Install **Grunt** running `npm install -g grunt-cli` in your console
-- Install **Grunt dependencies** running `npm install --save-dev` in your console
+- Install **Grunt dependencies** running `npm install --save-dev grunt` in your console
+- Install **JSHint Grunt plugin** running `npm install grunt-contrib-jshint --save-dev` in your console
 - Run tasks by running `grunt <task_name>` in your console
 
 ##Class Curriculum
@@ -14,10 +15,10 @@
 - **Getting Started**
 	 - ~~Creating Tasks~~
 	 - ~~Configuring Tasks~~
-	 - Working with Files
-	 - Templating
+	 - ~~Working with Files~~
+	 - ~~Templating~~
 - **Basic Workflow Tasks**
-	 - Running Static Analysis
+	 - ~~Running Static Analysis~~
 	 - Transcompiling CoffeeScript
 	 - Preprocessing with SASS
 	 - Minfying Code – Uglify and CSSMin
