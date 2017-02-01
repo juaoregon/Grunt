@@ -4,56 +4,25 @@ module.exports = function(grunt) {
 	'use strict';
 
 	grunt.initConfig({
-		prop: 'some property',
-		pkg: grunt.file.readJSON('package.json'),
-		running: {
-			taskOwner: 'Juan',
-			src: 'js/somefile.js',
-			dest: 'somefile.js',
-			options: {
-				comment: '/* <%= pkg.author %> */'
+		jshint: {
+			files: {
+				src: ['js/**/*.js']
 			}
 		},
-		multi: {
-			config1: {
-				message: 'This is config1',
+		coffee: {
+			dist: {
 				files: {
-					'someotherfile.js': 'js/somefile.js'
+					'dist/package.js': 'coffee/**/*.coffee'
 				}
 			},
-			config2: {
-				message: 'This is config2',
-				files: [
-					{
-						src: 'js/somefile.js',
-						dest: 'someotherfile.js'
-					}
-				]
+			options: {
+				sourceMap: true
 			}
 		}
 	});
 
-	grunt.registerTask('running', 'An example task', function(arg1) {
-		var done = this.async(),
-			comment = this.options().comment;
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-coffee');
 
-		grunt.config.requires('running.taskOwner');
-		grunt.log.writeln('grunt running...' + this.name, grunt.config.get('running.taskOwner'));
-		grunt.log.writeln(grunt.config.get('running.src'));
-
-		fs.readFile(grunt.config.get('running.src'), function(error, data) {
-			fs.writeFileSync(grunt.config.get('running.dest'), comment + '\n' + data);
-			done();
-		});
-	});
-
-	grunt.registerMultiTask('multi', 'An example multi task', function(arg1) {
-		grunt.log.writeln(this.data.message, arg1);
-
-		this.files.forEach(function(file) {
-			grunt.log.writeln(file.src[0] + ' ' + file.dest)
-		});
-	});
-
-	grunt.registerTask('run', 'Run all the tasks', ['running']);
+	grunt.registerTask('default', ['jshint', 'coffee']);
 }
