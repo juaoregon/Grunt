@@ -6,6 +6,13 @@
 - Install **Grunt dependencies** running `npm install --save-dev grunt` in your console
 - Install **JSHint Grunt plugin** running `npm install grunt-contrib-jshint --save-dev` in your console
 - Install **CoffeeScript Grunt plugin** running `npm install grunt-contrib-coffee --save-dev` in your console
+- Install **Sass Grunt plugin** running `npm install grunt-sass --save-dev` in your console
+- Install **Uglify Grunt plugin** running `npm install grunt-contrib-uglify --save-dev` in your console
+- Install **CSSMin Grunt plugin** running `npm install grunt-contrib-cssmin --save-dev` in your console
+- Install **Clean Grunt plugin** running `npm install grunt-contrib-clean --save-dev` in your console
+- Install **Build Grunt plugin** running `npm install grunt-html-build --save-dev` in your console
+- Install **Connect Grunt plugin** running `npm install grunt-contrib-connect --save-dev` in your console
+- Install **Load Grunt Tasks plugin** running `npm install load-grunt-tasks --save-dev` in your console
 - Run tasks by running `grunt <task_name>` in your console
 
 ##Class Curriculum
@@ -20,10 +27,10 @@
 	 - ~~Templating~~
 - **Basic Workflow Tasks**
 	 - ~~Running Static Analysis~~
-	 - Transcompiling CoffeeScript
-	 - Preprocessing with SASS
-	 - Minfying Code – Uglify and CSSMin
-	 - Running the Site in a Web Server
+	 - ~~Transcompiling CoffeeScript~~
+	 - ~~Preprocessing with SASS~~
+	 - ~~Minfying Code – Uglify and CSSMin~~
+	 - ~~Running the Site in a Web Server~~
 - **Advanced Workflow Tasks**
 	 - Developing with RequireJS
 	 - Unit Testing with Jasmine and Karma
