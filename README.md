@@ -45,10 +45,10 @@
 	 - [x] Unit Testing with Jasmine and Karma
 	 - [x] Creating Coverage Reports
 - **Working with Git**
-	 - [ ] Installing and Initialising Git
-	 - [ ] Adding New and Changed Files
-	 - [ ] Committing Changes
-	 - [ ] Rebasing on to Master
+	 - [x] Installing and Initialising Git
+	 - [x] Adding New and Changed Files
+	 - [x] Committing Changes
+	 - [x] Rebasing on to Master
 - **Building a Grunt Plugin**
 	 - [ ] Grunt init and the Plugin Template
 	 - [ ] Creating the Plugin
