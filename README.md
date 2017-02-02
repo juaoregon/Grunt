@@ -62,4 +62,4 @@
 - **Continuing Learning**
 	 - [x] Breaking Down the Gruntfile
 	 - [x] Troubleshooting Common Problems
-	 - [x] Additional Resources
+	 - [x] Additional Resources (yeoman.io)
