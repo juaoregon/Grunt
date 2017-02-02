@@ -60,6 +60,6 @@
 	 - [x] Testing the Plugin
 	 - [x] Integrating with the Plugin
 - **Continuing Learning**
-	 - [ ] Breaking Down the Gruntfile
-	 - [ ] Troubleshooting Common Problems
-	 - [ ] Additional Resources
+	 - [x] Breaking Down the Gruntfile
+	 - [x] Troubleshooting Common Problems
+	 - [x] Additional Resources
