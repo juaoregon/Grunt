@@ -3,57 +3,129 @@ var fs = require('fs');
 module.exports = function(grunt) {
 	'use strict';
 
+	require('load-grunt-tasks')(grunt);
+
 	grunt.initConfig({
-		prop: 'some property',
-		pkg: grunt.file.readJSON('package.json'),
-		running: {
-			taskOwner: 'Juan',
-			src: 'js/somefile.js',
-			dest: 'somefile.js',
-			options: {
-				comment: '/* <%= pkg.author %> */'
+		jshint: {
+			files: {
+				src: ['js/**/*.js', 'test/**/*.js']
 			}
 		},
-		multi: {
-			config1: {
-				message: 'This is config1',
+		clean: ['dist/**/*'],
+		coffee: {
+			dist: {
 				files: {
-					'someotherfile.js': 'js/somefile.js'
+					'dist/js/package.js': 'coffee/**/*.coffee'
 				}
 			},
-			config2: {
-				message: 'This is config2',
+			options: {
+				sourceMap: true
+			}
+		},
+		sass: {
+			dist: {
+				files: {
+					'dist/css/styles.css': 'sass/**/*.scss'
+				}
+			},
+			options: {
+				sourceMap: true
+			}
+		},
+		uglify: {
+			dist: {
+				files: {
+					'dist/js/package.min.js': 'dist/js/**/*.js'
+				}
+			},
+			options: {
+				sourceMap: true,
+				sourceMapIn: 'dist/js/package.js.map'
+			}
+		},
+		requirejs: {
+			dist: {
+				options: {
+					baseUrl: 'js',
+					out: 'dist/js/app.js',
+					include: 'main',
+					name: 'vendor/almond'
+				}
+			}
+		},
+		cssmin: {
+			dist: {
+				files: {
+					'dist/css/styles.min.css': 'dist/css/**/*.css'
+				}
+			},
+			options: {
+				sourceMap: true
+			}
+		},
+		copy: {
+			dev: {
 				files: [
 					{
-						src: 'js/somefile.js',
-						dest: 'someotherfile.js'
+						src: 'node_modules/grunt-contrib-requirejs/tasks/require.js',
+						dest: 'dist/js/vendor/require.js'
+					}, {
+						expand: true,
+						src: ['js/**'],
+						dest: 'dist'
 					}
 				]
+			}
+		},
+		htmlbuild: {
+			dist: {
+				src: 'index.html',
+				dest: 'dist/index.html',
+				options: {
+					prefix: '',
+					relative: true,
+					scripts: {
+						'package': ['dist/js/package.min.js', 'dist/js/app.js']
+					},
+					styles: {
+						css: 'dist/css/styles.min.css'
+					}
+				}
+			},
+			dev: {
+				src: 'index.html',
+				dest: 'dist/index.html',
+				options: {
+					prefix: '',
+					relative: true,
+					scripts: {
+						'package': 'dist/js/package.js'
+					},
+					styles: {
+						css: 'dist/css/styles.css'
+					}
+				}
+			}
+		},
+		connect: {
+			server: {
+				options: {
+					base: './dist/',
+					keepalive: true,
+					open: true
+				}
+			}
+		},
+		karma: {
+			unit: {
+				configFile: 'karma.conf.js'
 			}
 		}
 	});
 
-	grunt.registerTask('running', 'An example task', function(arg1) {
-		var done = this.async(),
-			comment = this.options().comment;
-
-		grunt.config.requires('running.taskOwner');
-		grunt.log.writeln('grunt running...' + this.name, grunt.config.get('running.taskOwner'));
-		grunt.log.writeln(grunt.config.get('running.src'));
-
-		fs.readFile(grunt.config.get('running.src'), function(error, data) {
-			fs.writeFileSync(grunt.config.get('running.dest'), comment + '\n' + data);
-			done();
-		});
-	});
-
-	grunt.registerMultiTask('multi', 'An example multi task', function(arg1) {
-		grunt.log.writeln(this.data.message, arg1);
-
-		this.files.forEach(function(file) {
-			grunt.log.writeln(file.src[0] + ' ' + file.dest)
-		});
-	});
-
-	grunt.registerTask('run', 'Run all the tasks', ['running']);
+	//grunt.registerTask('default', ['jshint', 'clean', 'coffee', 'sass', 'uglify', 'requirejs', 'cssmin', 'copy', 'htmlbuild:dist', 'connect']);
+	grunt.registerTask('pre-build', ['jshint', 'karma', 'clean', 'coffee', 'sass']);
+	grunt.registerTask('compress', ['uglify', 'requirejs', 'cssmin']);
+	grunt.registerTask('build:dev', ['pre-build', 'compress', 'copy', 'htmlbuild:dev', 'connect']);
+	grunt.registerTask('build:dist', ['pre-build', 'compress', 'htmlbuild:dist', 'connect']);
 }
