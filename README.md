@@ -22,6 +22,9 @@
 - Install **Karma CLI** running `npm install karma-cli -g` in your console
 - Install **Karma Coverage Plugin** running `npm install karma-coverage --save-dev` in your console
 - Install **Git Grunt Plugin** running `npm install grunt-git --save-dev` in your console
+- Install **Init Grunt Plugin** running `npm install grunt-init -g` in your console
+- Install **Init Grunt Plugin** running `npm install grunt-init -g` in your console
+- Clone **Grunt Init Repo** running `git clone https://github.com/gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin` or `git clone https://github.com/gruntjs/grunt-init-gruntplugin.git %USERPROFILE%\.grunt-init\gruntplugin` if you use Windows
 - Run tasks by running `grunt` in your console
 
 ##Class Curriculum

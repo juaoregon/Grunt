@@ -148,19 +148,15 @@ module.exports = function(grunt) {
 					branch: ''
 				}
 			}
+		},
+		get_branchname: {
+			dist: {
+				options: {
+					target: 'gitrebase.dist.options.branch',
+					quiet: true
+				}
+			}
 		}
-	});
-
-	grunt.registerTask('get-branch', function() {
-		var done = this.async();
-
-		grunt.util.spawn({
-			cmd: 'git',
-			args: ['symbolic-ref', 'HEAD', '--short']
-		}, function(error, result) {
-			grunt.config.set('gitrebase.dist.options.branch', result.stdout);
-			done();
-		});
 	});
 
 	//grunt.registerTask('default', ['jshint', 'clean', 'coffee', 'sass', 'uglify', 'requirejs', 'cssmin', 'copy', 'htmlbuild:dist', 'connect']);
@@ -168,5 +164,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('compress', ['uglify', 'requirejs', 'cssmin']);
 	grunt.registerTask('build:dev', ['pre-build', 'compress', 'copy', 'htmlbuild:dev', 'connect']);
 	grunt.registerTask('build:dist', ['pre-build', 'compress', 'htmlbuild:dist', 'git', 'connect']);
-	grunt.registerTask('git', ['gitadd', 'gitcommit', 'get-branch', 'gitcheckout', 'gitrebase']);
+	grunt.registerTask('git', ['gitadd', 'gitcommit', 'get_branchname', 'gitcheckout', 'gitrebase']);
 }
