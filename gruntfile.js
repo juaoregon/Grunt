@@ -158,7 +158,7 @@ module.exports = function(grunt) {
 			cmd: 'git',
 			args: ['symbolic-ref', 'HEAD', '--short']
 		}, function(error, result) {
-			grunt.config.set('gitrebase.dist.options.branch');
+			grunt.config.set('gitrebase.dist.options.branch', result.stdout);
 			done();
 		});
 	});
