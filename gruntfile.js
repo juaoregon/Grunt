@@ -134,12 +134,39 @@ module.exports = function(grunt) {
 					message: grunt.option('commit-message')
 				}
 			}
+		},
+		gitcheckout: {
+			dist: {
+				options: {
+					branch: 'master'
+				}
+			}
+		},
+		gitrebase: {
+			dist: {
+				options: {
+					branch: ''
+				}
+			}
 		}
+	});
+
+	grunt.registerTask('get-branch', function() {
+		var done = this.async();
+
+		grunt.util.spawn({
+			cmd: 'git',
+			args: ['symbolic-ref', 'HEAD', '--short']
+		}, function(error, result) {
+			git.config.set('gitrebase.dist.options.branch');
+			done();
+		});
 	});
 
 	//grunt.registerTask('default', ['jshint', 'clean', 'coffee', 'sass', 'uglify', 'requirejs', 'cssmin', 'copy', 'htmlbuild:dist', 'connect']);
 	grunt.registerTask('pre-build', ['jshint', 'karma', 'clean', 'coffee', 'sass']);
 	grunt.registerTask('compress', ['uglify', 'requirejs', 'cssmin']);
 	grunt.registerTask('build:dev', ['pre-build', 'compress', 'copy', 'htmlbuild:dev', 'connect']);
-	grunt.registerTask('build:dist', ['pre-build', 'compress', 'htmlbuild:dist', 'gitadd', 'gitcommit', 'connect']);
+	grunt.registerTask('build:dist', ['pre-build', 'compress', 'htmlbuild:dist', 'git', 'connect']);
+	grunt.registerTask('git', ['gitadd', 'gitcommit', 'get-branch', 'gitcheckout', 'gitrebase']);
 }
