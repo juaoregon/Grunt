@@ -21,6 +21,7 @@
 - Install **Karma Grunt plugin** running `npm install grunt-karma --save-dev` in your console
 - Install **Karma CLI** running `npm install karma-cli -g` in your console
 - Install **Karma Coverage Plugin** running `npm install karma-coverage --save-dev` in your console
+- Install **Git Grunt Plugin** running `npm install grunt-git --save-dev` in your console
 - Run tasks by running `grunt` in your console
 
 ##Class Curriculum
