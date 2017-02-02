@@ -25,6 +25,7 @@
 - Install **Init Grunt Plugin** running `npm install grunt-init -g` in your console
 - Install **Init Grunt Plugin** running `npm install grunt-init -g` in your console
 - Clone **Grunt Init Repo** running `git clone https://github.com/gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin` or `git clone https://github.com/gruntjs/grunt-init-gruntplugin.git %USERPROFILE%\.grunt-init\gruntplugin` if you use Windows
+- Install custom **Get Branch Name Grunt Plugin** running `npm install grunt-get-branch-name --save-dev` in your console
 - Run tasks by running `grunt` in your console
 
 ##Class Curriculum
@@ -53,11 +54,11 @@
 	 - [x] Committing Changes
 	 - [x] Rebasing on to Master
 - **Building a Grunt Plugin**
-	 - [ ] Grunt init and the Plugin Template
-	 - [ ] Creating the Plugin
-	 - [ ] Working with Configuration Options
-	 - [ ] Testing the Plugin
-	 - [ ] Integrating with the Plugin
+	 - [x] Grunt init and the Plugin Template
+	 - [x] Creating the Plugin
+	 - [x] Working with Configuration Options
+	 - [x] Testing the Plugin
+	 - [x] Integrating with the Plugin
 - **Continuing Learning**
 	 - [ ] Breaking Down the Gruntfile
 	 - [ ] Troubleshooting Common Problems
