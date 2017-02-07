@@ -2,31 +2,8 @@
 [Rapid Grunt](https://stackskills.com/courses/enrolled/50330) course by StackSkills and PACKT
 
 ##Installation
-- Install **Grunt** running `npm install -g grunt-cli` in your console
-- Install **Grunt dependencies** running `npm install --save-dev grunt` in your console
-- Install **JSHint Grunt plugin** running `npm install grunt-contrib-jshint --save-dev` in your console
-- Install **CoffeeScript Grunt plugin** running `npm install grunt-contrib-coffee --save-dev` in your console
-- Install **Sass Grunt plugin** running `npm install grunt-sass --save-dev` in your console
-- Install **Uglify Grunt plugin** running `npm install grunt-contrib-uglify --save-dev` in your console
-- Install **CSSMin Grunt plugin** running `npm install grunt-contrib-cssmin --save-dev` in your console
-- Install **Clean Grunt plugin** running `npm install grunt-contrib-clean --save-dev` in your console
-- Install **Build Grunt plugin** running `npm install grunt-html-build --save-dev` in your console
-- Install **Connect Grunt plugin** running `npm install grunt-contrib-connect --save-dev` in your console
-- Install **Load Grunt Tasks plugin** running `npm install load-grunt-tasks --save-dev` in your console
-- Install **RequireJS Grunt plugin** running `npm install grunt-contrib-requirejs --save-dev` in your console
-- Save **AlmondJS** from @jrburke [requirejs/almond repo](https://github.com/requirejs/almond)
-- Install **Copy Grunt plugin** running `npm install grunt-contrib-copy --save-dev` in your console
-- Install **Karma** running `npm install karma --save-dev` in your console
-- Install **Jasmine** running `npm install jasmine-core --save-dev` in your console
-- Install **Karma Grunt plugin** running `npm install grunt-karma --save-dev` in your console
-- Install **Karma CLI** running `npm install karma-cli -g` in your console
-- Install **Karma Coverage Plugin** running `npm install karma-coverage --save-dev` in your console
-- Install **Git Grunt Plugin** running `npm install grunt-git --save-dev` in your console
-- Install **Init Grunt Plugin** running `npm install grunt-init -g` in your console
-- Install **Init Grunt Plugin** running `npm install grunt-init -g` in your console
-- Clone **Grunt Init Repo** running `git clone https://github.com/gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin` or `git clone https://github.com/gruntjs/grunt-init-gruntplugin.git %USERPROFILE%\.grunt-init\gruntplugin` if you use Windows
-- Install custom **Get Branch Name Grunt Plugin** running `npm install grunt-get-branch-name --save-dev` in your console
-- Run tasks by running `grunt` in your console
+- `npm install`
+- `grunt`
 
 ##Class Curriculum
 - **Introduction**
